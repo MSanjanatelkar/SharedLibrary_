@@ -15,17 +15,17 @@ def call(body) {
       "apiVersion": "v1",
       "kind": "Service",
       "metadata": {
-        "name": “{config.name}”
+        "name": ${config.name}
       },
       "spec": {
         "ports": [
           {
-            "port": 8020,
-            "targetPort": 8020
+            "port": ${config.port},
+            "targetPort": ${config.port}
           }
         ],
         "selector": {
-          "deploymentconfig": "{config.name}"
+          "deploymentconfig": ${config.name}
         }
       }
     },
@@ -33,12 +33,12 @@ def call(body) {
       "apiVersion": "v1",
       "kind": "DeploymentConfig",
       "metadata": {
-        "name": "{config.name}"
+        "name": ${config.name}
       },
       "spec": {
         "replicas": 2,
         "selector": {
-          "deploymentconfig": "{config.name}"
+          "deploymentconfig": ${config.name}
         },
         "strategy": {
           "type": "Recreate"
@@ -46,13 +46,13 @@ def call(body) {
         "template": {
           "metadata": {
             "labels": {
-              "deploymentconfig": "{config.name}"
+              "deploymentconfig": ${config.name}
             }
           },
           "spec": {
             "containers": [
               {
-                "image": "{config.imagename}",
+                "image": ${config.imagename},
                 "name": "daac",
                 "ports": [
                   {
@@ -91,7 +91,7 @@ def call(body) {
         "name": "daactemplate"
       },
       "spec": {
-        "dockerImageRepository": "{config.imagename}"
+        "dockerImageRepository": ${config.imagename}
       }
     },
     {
