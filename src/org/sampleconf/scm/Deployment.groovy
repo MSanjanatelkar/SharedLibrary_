@@ -1,4 +1,4 @@
-package org.sample.scm
+package org.sampleconf.scm
 
 
 	class Deployment implements Serializable {
