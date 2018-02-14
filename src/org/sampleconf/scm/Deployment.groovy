@@ -1,4 +1,4 @@
-package org.k9.openshift
+package org.sample.scm
 
 
 	class Deployment implements Serializable {
