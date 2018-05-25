@@ -1,4 +1,4 @@
-package org.k9.scm
+package org.scm
 
 class Git implements Serializable {
   def config
@@ -10,10 +10,6 @@ class Git implements Serializable {
   }
 
   void gitClone(def parameter = false) {
-      if (this.script.env.ghprbSourceBranch && this.script.env.ghprbTargetBranch) {
-            return this.pullRequestBuilder(stage: "Git Pull Request Builder")
-        } else {
-            return this.checkout(stage: "Git Initialize")
-        }
-    }
+     
+    this.script.sh "successful shared library"
 }    
