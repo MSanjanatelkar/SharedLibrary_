@@ -10,6 +10,6 @@ class Git implements Serializable {
   }
 
   void gitClone(def parameter = false) {
-     
-    this.script.sh "successful shared library"
+      this.script.echo "successful shared library"
+  }
 }    
