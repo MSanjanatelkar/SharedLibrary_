@@ -10,6 +10,7 @@ class Git implements Serializable {
   }
 
   void gitClone(def parameter = false) {
-      this.script.echo "${scmUrl}"
+      this.script.echo "${this.config.scmUrl}"
+    
   }
 }    
